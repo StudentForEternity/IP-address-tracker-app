@@ -61,14 +61,28 @@ function App() {
           </button>
         </div>
         <div className="info-container">
-          <p>id address</p>
-          <h1>{place ? place.ip : "n/a"}</h1>
-          <p>Location</p>
-          <h1>{place ? place.location.region : "n/a"}</h1>
-          <p>timezone</p>
-          <h1>{place ? place.location.timezone : "n/a"}</h1>
-          <p>isp</p>
-          <h1>{place ? place.isp : "n/a"}</h1>
+          <div>
+            <p className="info-container-p">id address</p>
+            <h1 className="info-container-h">{place ? place.ip : "n/a"}</h1>
+          </div>
+          <div>
+            <p className="info-container-p">Location</p>
+            <h1 className="info-container-h">
+              {place ? place.location.region : "n/a"}
+            </h1>
+          </div>
+          <div>
+            <p className="info-container-p">timezone</p>
+            <h1 className="info-container-h">
+              {place ? "UTC" + place.location.timezone : "n/a"}
+            </h1>
+          </div>
+          <div>
+            <p className="info-container-p">isp</p>
+            <h1 className="info-container-h last">
+              {place ? place.isp : "n/a"}
+            </h1>
+          </div>
         </div>
       </header>
       <section className="map-section">
