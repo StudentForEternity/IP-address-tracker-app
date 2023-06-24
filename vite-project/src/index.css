@@ -1,3 +1,6 @@
+:root {
+  --header-height: 300px;
+}
 * {
   box-sizing: border-box;
 }
@@ -7,9 +10,7 @@ body {
   font-size: 1.125rem;
   font-family: "Rubik", sans-serif;
 }
-.main-container {
-  position: relative;
-}
+
 img,
 picture,
 iframe {
@@ -31,32 +32,18 @@ h2 {
 }
 
 .header-container {
-  display: grid;
   background-image: url(assets/pattern-bg-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 1.5em 1em 9.2em 1em;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
+  padding: 1.5em 2em 0;
+  position: relative;
+  height: var(--header-height);
 }
 
 .input-btn-container {
   display: flex;
 }
 
-@media (min-width: 750px) {
-  .header-container {
-    background-image: url(assets/pattern-bg-desktop.png);
-    padding-bottom: 6em;
-  }
-  .input-btn-container {
-    width: 50%;
-    margin: 0 auto;
-  }
-}
 .input-field {
   flex: 1;
   padding: 1em;
@@ -81,17 +68,16 @@ h2 {
 .submit-btn:focus {
   background-color: hsl(0, 1%, 26%);
 }
+
 .info-container {
   text-align: center;
-  position: absolute;
-  bottom: -3%;
-  transform: translateY(50%);
-  left: 20%;
-  right: 20%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
+  margin-top: 2em;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
 }
 .info-container-p {
   font-size: 0.75rem;
@@ -110,15 +96,34 @@ h2 {
 .last {
   margin-bottom: 1em;
 }
+
 @media (min-width: 750px) {
+  :root {
+    --header-height: 250px;
+  }
+  .header-container {
+    background-image: url(assets/pattern-bg-desktop.png);
+  }
+  .input-btn-container {
+    width: 60%;
+    margin: 0 auto;
+  }
+
   .info-container {
+    padding-block: 1em;
     flex-direction: row;
     justify-content: space-around;
-    bottom: 5%;
   }
 }
 
+.map-section {
+  position: relative;
+}
+
 #map {
-  height: 100vh;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  height: calc(100vh - var(--header-height));
   width: 100%;
 }
