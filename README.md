@@ -1,5 +1,5 @@
 # IP-address-tracker-app
-An app built in React that lets you find any IP Address in the world on a map! 
+An app built in React that lets you find any IP Address, and more, in the world on a map! 
 
 Just type in your IP address and search!
 
